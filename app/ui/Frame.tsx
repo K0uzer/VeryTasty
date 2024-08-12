@@ -11,7 +11,7 @@ import { Button, Layout, Menu, theme } from 'antd'
 
 const { Header, Sider, Content } = Layout
 
-const Frame = (children: React.JSX.Element) => {
+const Frame = ({ children }: { children: React.ReactNode }) => {
     const [collapsed, setCollapsed] = useState(false)
     const {
         token: { colorBgContainer, borderRadiusLG },
