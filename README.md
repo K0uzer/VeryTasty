@@ -206,42 +206,42 @@ Ant Design для адаптивных элементов интерфейса.
 
 Проект по разработке веб-сайта кулинарных рецептов «Оцень вкусно» можно структурировать согласно паттерну Feature-Sliced Design. Этот подход позволяет разбивать проект на независимые модули, обеспечивая хорошую масштабируемость и удобство поддержки:
 
-/src
-  /app
-    /providers
-    /layout
-    /routes
-  /shared
-    /config
-    /api
-    /ui
-    /lib
-    /model
-  /entities
-    /recipe
-    /user
-    /chat
-  /features
-    /auth
-    /recipe-list
-    /recipe-filter
-    /recipe-search
-    /add-recipe
-    /favorites
-    /chat
-  /widgets
-    /header
-    /footer
-    /recipe-card
-    /pagination
-    /recipe-details
-  /pages
-    /home
-    /recipe
-    /favorites
-    /profile
-    /chat
-    /auth
+    /src
+      /app
+        /providers
+        /layout
+        /routes
+      /shared
+        /config
+        /api
+        /ui
+        /lib
+        /model
+      /entities
+        /recipe
+        /user
+        /chat
+      /features
+        /auth
+        /recipe-list
+        /recipe-filter
+        /recipe-search
+        /add-recipe
+        /favorites
+        /chat
+      /widgets
+        /header
+        /footer
+        /recipe-card
+        /pagination
+        /recipe-details
+      /pages
+        /home
+        /recipe
+        /favorites
+        /profile
+        /chat
+        /auth
 
 
 Описание папок и файлов:
