@@ -1,7 +1,8 @@
 import React from 'react'
 
 import './global.css'
-import Frame from './UI/Frame'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 export const metadata = {
     title: 'Очень вкусно',
@@ -16,7 +17,9 @@ export default function RootLayout({
     return (
         <html lang="ru">
             <body>
-                <Frame>{children}</Frame>
+                <Header />
+                {children}
+                <Footer />
             </body>
         </html>
     )
