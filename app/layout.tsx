@@ -1,8 +1,11 @@
 import React from 'react'
+import { Provider } from 'react-redux'
 
-import './global.css'
+import store from './store'
 import Header from './components/Header'
 import Footer from './components/Footer'
+
+import './global.css'
 
 export const metadata = {
     title: 'Очень вкусно',
@@ -15,12 +18,14 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="ru">
-            <body>
-                <Header />
-                {children}
-                <Footer />
-            </body>
-        </html>
+        <Provider store={store}>
+            <html lang="ru">
+                <body>
+                    <Header />
+                    {children}
+                    <Footer />
+                </body>
+            </html>
+        </Provider>
     )
 }
