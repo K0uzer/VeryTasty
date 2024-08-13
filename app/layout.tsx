@@ -1,11 +1,11 @@
 import React from 'react'
 
 import './global.css'
-import Frame from './ui/Frame'
+import Frame from './UI/Frame'
 
 export const metadata = {
-    title: 'Very tasty',
-    description: 'Cooking Recipes Website',
+    title: 'Очень вкусно',
+    description: 'Сайт кулинарных рецептов',
 }
 
 export default function RootLayout({
