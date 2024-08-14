@@ -2,11 +2,23 @@
 import React from 'react'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
 import { Button, Checkbox, Form, Input, Flex } from 'antd'
+import { signIn, useSession } from 'next-auth/react'
 import Link from 'next/link'
 
+import { PATH } from '@app/constants'
+
 const FormAuth: React.FC = () => {
-    const onFinish = (values: any) => {
-        console.log('Received values of form: ', values)
+    const { data: session, status } = useSession()
+
+    if (status === 'authenticated') {
+        return <div>Добро пожаловать, {session.user.name}!</div>
+    }
+    const onFinish = (event) => {
+        event.preventDefault()
+        signIn('credentials', {
+            username: event.target.username.value,
+            password: event.target.password.value,
+        })
     }
 
     return (
@@ -14,12 +26,15 @@ const FormAuth: React.FC = () => {
             name="login"
             initialValues={{ remember: true }}
             style={{ maxWidth: 360 }}
-            onFinish={onFinish}
+            onSubmitCapture={(event) => onFinish(event)}
         >
             <Form.Item
                 name="username"
                 rules={[
-                    { required: true, message: 'Please input your Username!' },
+                    {
+                        required: true,
+                        message: 'Пожауйста, введите свой логин!',
+                    },
                 ]}
             >
                 <Input prefix={<UserOutlined />} placeholder="Username" />
@@ -27,7 +42,10 @@ const FormAuth: React.FC = () => {
             <Form.Item
                 name="password"
                 rules={[
-                    { required: true, message: 'Please input your Password!' },
+                    {
+                        required: true,
+                        message: 'Пожауйста, введите свой пароль!',
+                    },
                 ]}
             >
                 <Input
@@ -39,7 +57,7 @@ const FormAuth: React.FC = () => {
             <Form.Item>
                 <Flex justify="space-between" align="center">
                     <Form.Item name="remember" valuePropName="checked" noStyle>
-                        <Checkbox>Remember me</Checkbox>
+                        <Checkbox>Запомнить меня</Checkbox>
                     </Form.Item>
                     <a href="/">Я забыл пароль</a>
                 </Flex>
@@ -49,7 +67,8 @@ const FormAuth: React.FC = () => {
                 <Button block type="primary" htmlType="submit">
                     Войти
                 </Button>
-                или <Link href="/">Зарегистрируйся сейчас!</Link>
+                или{' '}
+                <Link href={PATH.REGISTRATION}>Зарегистрируйся сейчас!</Link>
             </Form.Item>
         </Form>
     )
