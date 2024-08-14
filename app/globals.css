@@ -1,0 +1,16 @@
+:root {
+    --header-background-color: linear-gradient(#b26d12, #dfbf32);
+    --header-button-nav-list-background-color: rgb(239 201 56 / 95%);
+    --header-button-nav-list-background-color--hover: rgb(250, 237, 0);
+    --header-button-nav-list-box-shadow--hover: #a78a56f6;
+    --footer-background-color: linear-gradient(#dfbf32, #b26d12);
+    --footer-color: white;
+    --footer-link-color: white;
+    --footer-border-color: rgb(0, 0, 0);
+    --main-page-preview-border-color: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}

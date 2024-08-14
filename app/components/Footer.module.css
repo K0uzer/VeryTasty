@@ -1,0 +1,16 @@
+.footer {
+    /* position: fixed; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    bottom: 0;
+    padding: 10px;
+    border: 1px solid var(--footer-border-color);
+    background: var(--footer-background-color);
+    color: var(--footer-color);
+}
+
+.link {
+    color: var(--footer-link-color);
+}

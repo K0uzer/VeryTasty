@@ -1,4 +1,4 @@
-import { MouseEventHandler, ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 const Button = ({
     styles,
@@ -6,7 +6,7 @@ const Button = ({
     children,
 }: {
     styles: string
-    onClick: MouseEventHandler<HTMLButtonElement>
+    onClick: any
     children: ReactNode
 }) => {
     return (
