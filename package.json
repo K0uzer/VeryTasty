@@ -1,25 +1,33 @@
 {
-  "name": "VeryTasty",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@reduxjs/toolkit": "2.2.7",
-    "next": "14.2.5",
-    "react": "18",
-    "react-dom": "18"
-  },
-  "devDependencies": {
-    "@types/node": "20",
-    "@types/react": "18",
-    "@types/react-dom": "18",
-    "eslint": "8",
-    "eslint-config-next": "14.2.5",
-    "typescript": "5"
-  }
+    "name": "VeryTasty",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@reduxjs/toolkit": "2.2.7",
+        "antd": "5.20.1",
+        "module-alias": "2.2.3",
+        "next": "14.2.5",
+        "next-video": "1.1.4",
+        "react": "18",
+        "react-dom": "18",
+        "rkt": "^0.0.1"
+    },
+    "devDependencies": {
+        "@types/node": "20",
+        "@types/react": "18",
+        "@types/react-dom": "18",
+        "eslint": "8",
+        "eslint-config-next": "14.2.5",
+        "typescript": "5"
+    },
+    "_moduleAliases": {
+        "@modules": "dist/rest/modules",
+        "@services": "dist/services"
+    }
 }
