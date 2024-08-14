@@ -17,6 +17,11 @@
         border-radius: 35%;
         transition: 0.2s ease-out;
     }
+    &:active {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.911);
+        border-radius: 35%;
+        transition: 0.2s ease-out;
+    }
 }
 
 .nav {
@@ -30,12 +35,18 @@
 .listItem {
 }
 
-.button {
+.link {
+    font-size: 17px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     height: 50px;
     margin-left: 20px;
     border: none;
     border-radius: 6px;
+    color: black;
     background-color: var(--header-button-nav-list-background-color);
     transition: 0.3s ease-out;
     cursor: pointer;
@@ -46,4 +57,14 @@
         width: 210px;
         transition: 0.3s ease-out;
     }
+    &:active {
+        background-color: var(--header-button-nav-list-background-color--hover);
+        box-shadow: 4px 10px 0 0 var(--header-button-nav-list-box-shadow--hover);
+        width: 210px;
+        transition: 0.3s ease-out;
+    }
+}
+
+.link-icon {
+    margin-right: 10px;
 }

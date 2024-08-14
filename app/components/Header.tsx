@@ -12,42 +12,41 @@ import logo from '@public/logo.svg'
 import Button from '@app/UI/Button'
 
 import styles from './Header.module.css'
+import Link from 'next/link'
 
 const BUTTONS = [
     {
         key: '1',
-        icon: <UserOutlined />,
+        icon: <UserOutlined className={styles['link-icon']} />,
         title: 'Профиль',
         path: PATH.PROFILE,
     },
     {
         key: '2',
-        icon: <VideoCameraOutlined />,
+        icon: <VideoCameraOutlined className={styles['link-icon']} />,
         title: 'Рецепты',
         path: PATH.RECIPTS,
     },
     {
         key: '3',
-        icon: <CalculatorOutlined />,
+        icon: <CalculatorOutlined className={styles['link-icon']} />,
         title: 'Каллории',
         path: PATH.CALORIE,
     },
     {
         key: '4',
-        icon: <UnorderedListOutlined />,
+        icon: <UnorderedListOutlined className={styles['link-icon']} />,
         title: 'Готовые рационы',
         path: PATH.RATIONS,
     },
 ]
-
-const changePath = (path: string) => (location.href = `${DOMAIN}${path}`)
 
 const Header = () => {
     return (
         <section className={styles.header}>
             <Image
                 className={styles.logo}
-                onClick={() => changePath(PATH.MAIN)}
+                onClick={() => (location.href = `/`)}
                 src={logo}
                 alt="Очень вкусно"
                 width={50}
@@ -58,13 +57,12 @@ const Header = () => {
                 <ul className={styles.list}>
                     {BUTTONS.map((element) => (
                         <li className={styles.listItem} key={element.key}>
-                            <Button
-                                onClick={() => changePath(element.path)}
-                                styles={styles.button}
-                            >
-                                {element.icon}
-                                {element.title}
-                            </Button>
+                            <Link href={`${DOMAIN}${element.path}`}>
+                                <div className={styles.link}>
+                                    {element.icon}
+                                    {element.title}
+                                </div>
+                            </Link>
                         </li>
                     ))}
                 </ul>
