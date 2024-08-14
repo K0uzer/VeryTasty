@@ -8,9 +8,15 @@
     --footer-link-color: white;
     --footer-border-color: rgb(0, 0, 0);
     --main-page-preview-border-color: #000000;
+    --main-page-background-color: #dbb725db;
 }
 
 * {
     margin: 0;
     padding: 0;
+}
+
+html {
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }

@@ -14,7 +14,7 @@ export default function Home() {
                 <h1 className={styles.preview}>
                     — Готовить — это же так просто! Главное следовать рецепту.
                 </h1>
-                <div className={styles['video']}>
+                <div className={styles.video}>
                     <Video className="max-w-4xl" src={getStarted} />
                 </div>
             </main>

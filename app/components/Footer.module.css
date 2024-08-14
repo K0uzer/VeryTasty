@@ -1,5 +1,6 @@
 .footer {
-    /* position: fixed; */
+    font-family: cursive;
+    font-size: large;
     display: flex;
     justify-content: center;
     align-items: center;

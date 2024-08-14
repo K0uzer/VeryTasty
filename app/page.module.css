@@ -5,11 +5,12 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #dbb725db;
+    background-color: var(--main-page-background-color);
 }
 
-.video-background {
+.video {
     margin-top: 50px;
+    border: 5px solid black;
 }
 
 .preview {
@@ -22,6 +23,7 @@
     border-top: 2px solid var(--main-page-preview-border-color);
     border-bottom: 2px solid var(--main-page-preview-border-color);
 }
+
 .preview cite {
     color: #337ab7;
     font-size: 15px;
