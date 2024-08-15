@@ -10,4 +10,11 @@ const PATH = {
     RATIONS: '/pages/rations',
 }
 
-export { DOMAIN, PATH }
+const RULES_AUTH = [
+    {
+        required: true,
+        message: 'Пожауйста, введите свой данные!',
+    },
+]
+
+export { DOMAIN, PATH, RULES_AUTH }

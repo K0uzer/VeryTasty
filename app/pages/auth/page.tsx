@@ -9,7 +9,7 @@ const page = () => {
     return (
         <SessionProvider>
             <main className={styles.main}>
-                <h1>Авторизация</h1>
+                <h1 className={styles.previewAuth}>Авторизация</h1>
                 <FormAuth />
             </main>
         </SessionProvider>

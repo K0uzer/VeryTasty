@@ -23,6 +23,7 @@
     padding: 24px;
     border-top: 2px solid var(--main-page-preview-border-color);
     border-bottom: 2px solid var(--main-page-preview-border-color);
+    user-select: none;
 }
 
 .preview cite {

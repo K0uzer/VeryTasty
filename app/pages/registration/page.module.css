@@ -8,7 +8,7 @@
     background-color: var(--page-background-color);
 }
 
-.previewAuth {
+.previewRegistration {
     margin-bottom: 2rem;
     color: white;
     user-select: none;

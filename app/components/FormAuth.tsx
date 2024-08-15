@@ -5,7 +5,7 @@ import { Button, Checkbox, Form, Input, Flex } from 'antd'
 import { signIn, useSession } from 'next-auth/react'
 import Link from 'next/link'
 
-import { PATH } from '@app/constants'
+import { PATH, RULES_AUTH } from '@app/constants'
 
 const FormAuth: React.FC = () => {
     const { data: session, status } = useSession()
@@ -13,7 +13,7 @@ const FormAuth: React.FC = () => {
     if (status === 'authenticated') {
         return <div>Добро пожаловать, {session.user.name}!</div>
     }
-    const onFinish = (event) => {
+    const onFinish = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         signIn('credentials', {
             username: event.target.username.value,
@@ -21,45 +21,43 @@ const FormAuth: React.FC = () => {
         })
     }
 
+    const FORM_ITEMS = {
+        LOGIN: 'login',
+        USERNAME: 'username',
+        PASSWORD: 'password',
+        REMEMBER: 'remember',
+    }
+
     return (
         <Form
-            name="login"
+            name={FORM_ITEMS.LOGIN}
             initialValues={{ remember: true }}
             style={{ maxWidth: 360 }}
             onSubmitCapture={(event) => onFinish(event)}
         >
-            <Form.Item
-                name="username"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Пожауйста, введите свой логин!',
-                    },
-                ]}
-            >
-                <Input prefix={<UserOutlined />} placeholder="Username" />
+            <Form.Item name={FORM_ITEMS.USERNAME} rules={RULES_AUTH}>
+                <Input
+                    prefix={<UserOutlined />}
+                    placeholder={FORM_ITEMS.USERNAME}
+                />
             </Form.Item>
-            <Form.Item
-                name="password"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Пожауйста, введите свой пароль!',
-                    },
-                ]}
-            >
+            <Form.Item name={FORM_ITEMS.PASSWORD} rules={RULES_AUTH}>
                 <Input
                     prefix={<LockOutlined />}
-                    type="password"
-                    placeholder="Password"
+                    type={FORM_ITEMS.PASSWORD}
+                    placeholder={FORM_ITEMS.PASSWORD}
                 />
             </Form.Item>
             <Form.Item>
                 <Flex justify="space-between" align="center">
-                    <Form.Item name="remember" valuePropName="checked" noStyle>
+                    <Form.Item
+                        name={FORM_ITEMS.REMEMBER}
+                        valuePropName="checked"
+                        noStyle
+                    >
                         <Checkbox>Запомнить меня</Checkbox>
                     </Form.Item>
-                    <a href="/">Я забыл пароль</a>
+                    <Link href={PATH.MAIN}>Я забыл пароль</Link>
                 </Flex>
             </Form.Item>
 
