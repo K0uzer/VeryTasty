@@ -1,24 +1,22 @@
-.header {
+/* .header {
     display: flex;
     flex-wrap: wrap;
     padding: 2rem;
     background: var(--header-background-color);
     border: 1px solid black;
-}
+} */
 
 .logo {
-    cursor: pointer;
-    transition: 0.2s ease-out;
     padding-bottom: 5px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.911);
+    cursor: pointer;
+    transition: 0.2s ease-out;
 
     &:hover {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.911);
         border-radius: 35%;
         transition: 0.2s ease-out;
     }
     &:active {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.911);
         border-radius: 35%;
         transition: 0.2s ease-out;
     }
@@ -35,13 +33,17 @@
 .listItem {
 }
 
+.logoLink {
+    height: 50px;
+}
+
 .link {
     font-size: 17px;
     font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
+    width: 175px;
     height: 50px;
     margin-left: 20px;
     border: none;
@@ -67,4 +69,8 @@
 
 .link-icon {
     margin-right: 10px;
+}
+
+.content {
+    padding: '0 48px';
 }

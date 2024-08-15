@@ -67,7 +67,6 @@ const FormAuth: React.FC = () => {
                 <Button block type="primary" htmlType="submit">
                     Войти
                 </Button>
-                или{' '}
                 <Link href={PATH.REGISTRATION}>Зарегистрируйся сейчас!</Link>
             </Form.Item>
         </Form>

@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    border-radius: 1%;
     background-color: var(--page-background-color);
 }
 

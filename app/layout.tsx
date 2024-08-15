@@ -1,7 +1,6 @@
 import React from 'react'
 
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import Frame from './components/Frame'
 
 import './globals.css'
 
@@ -18,9 +17,7 @@ export default function RootLayout({
     return (
         <html lang="ru">
             <body>
-                <Header />
-                {children}
-                <Footer />
+                <Frame>{children}</Frame>
             </body>
         </html>
     )
