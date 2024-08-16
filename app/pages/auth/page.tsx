@@ -1,5 +1,5 @@
 'use client'
-import FormAuth from '@app/components/FormAuth'
+import FormAuth from '@app/components/auth/FormAuth'
 import React from 'react'
 
 import styles from './page.module.css'
